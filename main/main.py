@@ -1,10 +1,7 @@
 import sys
 import os
 
-# When executing `python main/main.py` directly, the script's directory becomes
-# sys.path[0] (the `main/` folder), so sibling package `utils` isn't found.
-# Ensure project root is on sys.path so `from utils...` imports work both when
-# running as a script and when running as a module (`python -m main.main`).
+
 if __package__ is None:
     project_root = os.path.dirname(os.path.dirname(__file__))
     if project_root not in sys.path:
